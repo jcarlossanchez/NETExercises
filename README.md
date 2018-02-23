@@ -1,2 +1,2 @@
 # NETExercises
-This repository is ofr examples and exercises with .NET
+This repository is for examples and exercises with .NET

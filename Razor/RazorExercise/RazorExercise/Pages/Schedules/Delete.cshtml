@@ -1,0 +1,47 @@
+﻿@page "{id:int}"
+@model RazorExercise.Pages.Schedules.DeleteModel
+
+@{
+    ViewData["Title"] = "Eliminar programa";
+}
+
+<h2>Eliminar programa</h2>
+
+<h3>¿Está usted seguro de querer borrar esto?</h3>
+<div>
+    <h4>Schedule</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Schedule.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Schedule.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Schedule.PublicScheduleSize)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Schedule.PublicScheduleSize)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Schedule.PrivateScheduleSize)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Schedule.PrivateScheduleSize)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Schedule.UploadDT)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Schedule.UploadDT)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Schedule.ID" />
+        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <a asp-page="./Index">Regresar al listado</a>
+    </form>
+</div>
+

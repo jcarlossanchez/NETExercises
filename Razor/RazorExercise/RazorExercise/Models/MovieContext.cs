@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace RazorExercise.Models
 {
@@ -13,5 +9,6 @@ namespace RazorExercise.Models
         }
 
         public DbSet<Movie> Movie { get; set; }
+        public DbSet<Schedule> Schedule { get; set; }
     }
 }

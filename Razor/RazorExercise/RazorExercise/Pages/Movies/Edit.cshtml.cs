@@ -1,12 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RazorExercise.Models;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace RazorExercise.Pages.Movies
 {
@@ -53,7 +50,7 @@ namespace RazorExercise.Pages.Movies
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MovieExists(Movie.ID))
+                if (!_context.Movie.Any(e => e.ID == Movie.ID))
                 {
                     return NotFound();
                 }

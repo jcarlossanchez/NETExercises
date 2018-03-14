@@ -4,12 +4,19 @@
 @{
     ViewData["Title"] = "Inicio";
 }
-
 <h2>Inicio</h2>
-
 <p>
     <a asp-page="Create">Crear Nuevo</a>
 </p>
+<form>
+    <p>
+        <select asp-for="MovieGenre" asp-items="Model.Genres">
+            <option value="">Todos</option>
+        </select>
+        Titulo: <input type="text" name="SearchString" />
+        <input type="submit" value="Buscar"/>
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -24,6 +31,9 @@
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Movie[0].Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Movie[0].Rating)
                 </th>
             <th></th>
         </tr>
@@ -44,8 +54,11 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Editar</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Detalles</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Consultar</a> |
                 <a asp-page="./Delete" asp-route-id="@item.ID">Eliminar</a>
             </td>
         </tr>
